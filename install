@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export CI=true
+#export CI=true
 export CODEBUILD=true
 
 export CODEBUILD_ACCOUNT_ID=$(aws sts get-caller-identity --query 'Account' --output text)
@@ -29,7 +29,7 @@ export CODEBUILD_PROJECT=${CODEBUILD_BUILD_ID%:$CODEBUILD_LOG_PATH}
 export CODEBUILD_BUILD_URL=https://$AWS_DEFAULT_REGION.console.aws.amazon.com/codebuild/home?region=$AWS_DEFAULT_REGION#/builds/$CODEBUILD_BUILD_ID/view/new
 
 echo "==> AWS CodeBuild Extra Environment Variables:"
-echo "==> CI = $CI"
+#echo "==> CI = $CI"
 echo "==> CODEBUILD = $CODEBUILD"
 echo "==> CODEBUILD_ACCOUNT_ID = $CODEBUILD_ACCOUNT_ID"
 echo "==> CODEBUILD_GIT_AUTHOR = $CODEBUILD_GIT_AUTHOR"
